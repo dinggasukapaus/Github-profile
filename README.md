@@ -7,6 +7,6 @@
 ## TODO
 
 - [x] connect to github
-- [ ] read the data
+- [x] read the data
 - [ ] Parse the data
 - [ ] Print the data out

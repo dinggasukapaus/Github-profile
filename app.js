@@ -18,8 +18,14 @@ const options = {
 }
 
 // mengambil data lalu di teruskan ke funsi result 
-let request = https.request(options, (result) =>{
-console.log('got respone',result.statusCode)
+let request = https.request(options, (response) =>{
+    let body = ''
+    response.on('data',(data)=>{
+        body = body + data
+    })
+    response.on('end',() =>{
+        console.log(body)
+    })
 })
 
 request.end()
@@ -27,6 +33,8 @@ request.on('error',(e)=>{
     console.error(e);
 })
 //TODO : read the data
+
+
 
 //TODO : Parse the data
 //TODO : Print the data out
