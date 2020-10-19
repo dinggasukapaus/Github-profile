@@ -17,6 +17,7 @@ const options = {
 
 }
 
+//TODO : read the data
 // mengambil data lalu di teruskan ke funsi result 
 let request = https.request(options, (response) =>{
     let body = ''
@@ -32,11 +33,10 @@ request.end()
 request.on('error',(e)=>{
     console.error(e);
 })
-//TODO : read the data
-
-
 
 //TODO : Parse the data
+//? convert String to json
+
 //TODO : Print the data out
 
 // //! cara pertama
