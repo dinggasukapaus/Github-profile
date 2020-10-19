@@ -4,6 +4,7 @@
 
 //TODO : [x] connect to github
 //? load library https
+const { Console } = require('console')
 let https =require('https')
 // membuat variable array yang tidak bisa berubah
 const options = {
@@ -27,18 +28,22 @@ let request = https.request(options, (response) =>{
     response.on('end',() =>{
         //TODO : Parse the data
         //? convert String to json
-        let ParsDataProfile = JSON.parse(body)
-        console.log(ParsDataProfile.avatar_url)
+        let profile = JSON.parse(body)
+        //TODO : Print the data out
+        console.log(`${profile.login} owms ${profile.public_repos} repo(s) and has ${profile.followers} followers(s)`)
+
     })
 })
 
 request.end()
+
+
 request.on('error',(e)=>{
     console.error(e);
 })
 
 
-//TODO : Print the data out
+
 
 // //! cara pertama
 // //* fungsi dan parameter
