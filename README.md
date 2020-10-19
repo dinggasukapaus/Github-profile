@@ -8,5 +8,5 @@
 
 - [x] connect to github
 - [x] read the data
-- [ ] Parse the data
+- [x] Parse the data
 - [ ] Print the data out
