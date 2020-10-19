@@ -6,7 +6,7 @@
 
 ## TODO
 
-[x] connect to github
-[ ] read the data
-[ ] Parse the data
-[ ] Print the data out
+- [x] connect to github
+- [ ] read the data
+- [ ] Parse the data
+- [ ] Print the data out
