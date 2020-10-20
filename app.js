@@ -4,11 +4,19 @@
 
 let profile = require('./profile.js')
 
-console.log(profile)
-// membuat variable username agar bisa di define
-profile.get('dinggasukapaus')
-profile.get('senol')
+//! mencari username dengan inputan
+//memotong 2 data array pertama dan mengamnil sisanya
+let profiles = process.argv.slice(2)
+//mengambil data array yang telah di slice
+//lalu memperilakukan masing masing data array
+//?['dinggasukapaus'] => ['followersnya','reposnya']
+profiles.map(profile.get)
 
+// membuat data array
+// let profiles = ['dinggasukapaus','senol','ali','dntffm']
+// profiles.map(user =>{
+//     return profile.get(user)
+// })
 
 
 // //! cara pertama
