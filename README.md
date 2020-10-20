@@ -10,3 +10,4 @@
 - [x] read the data
 - [x] Parse the data
 - [x] Print the data out
+- [ ] refactoring code
