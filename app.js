@@ -6,11 +6,13 @@
 //? load library https
 const { Console } = require('console')
 let https =require('https')
+// membuat variable username agar bisa di define
+const username = 'dinggasukapaus'
 // membuat variable array yang tidak bisa berubah
 const options = {
     hostname:'api.github.com',
     port:443,
-    path:'/users/dinggasukapaus',
+    path:`/users/${username}`,
     method:'GET',
     headers:{
         'user-agent':'nodejs'
@@ -27,10 +29,15 @@ let request = https.request(options, (response) =>{
     })
     response.on('end',() =>{
         //TODO : Parse the data
-        //? convert String to json
         let profile = JSON.parse(body)
-        //TODO : Print the data out
-        console.log(`${profile.login} owms ${profile.public_repos} repo(s) and has ${profile.followers} followers(s)`)
+        if(response.statusCode===200){
+            console.log(`profile with '${username}' found`)
+            //? convert String to json
+            //TODO : Print the data out
+            console.log(`${profile.login} owms ${profile.public_repos} repo(s) and has ${profile.followers} followers(s)`)
+        }else{
+            console.log(`profile with '${username}' not found`)
+        }
 
     })
 })
